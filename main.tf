@@ -5,6 +5,16 @@ resource "aws_vpc" "hc-backend-vpc" {
 
   tags = merge(var.based-tags,
     {
-      Name = var.vpc-name
+      Name = "${var.prefix-name}-vpc"
+  })
+}
+
+
+resource "aws_internet_gateway" "igw" {
+  vpc_id = aws_vpc.hc-backend-vpc.id
+
+  tags = merge(var.based-tags,
+    {
+      Name = "${var.prefix-name}-igw"
   })
 }

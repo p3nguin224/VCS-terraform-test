@@ -1,4 +1,4 @@
-variable "vpc-name" {
+variable "prefix-name" {
   type = string
 }
 
@@ -13,3 +13,5 @@ variable "region" {
 variable "based-tags" {
   type = map(string)
 }
+
+
